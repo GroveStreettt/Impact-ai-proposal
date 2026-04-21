@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Integration for Impact Commercial Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #132238;
+    --navy-light: #1E3354;
+    --gold: #C9A84C;
+    --gold-light: #E4C97A;
+    --gold-pale: #F5EDD6;
+    --white: #FFFFFF;
+    --off-white: #F8F6F1;
+    --gray-light: #F4F6F9;
+    --gray-mid: #E8ECF2;
+    --gray-text: #6B7A8D;
+    --body-text: #2C3E50;
+    --accent-teal: #2A7F8C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #E8E4DC;
+    color: var(--body-text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* PAGE SYSTEM */
+  .page {
+    width: 850px;
+    min-height: 1100px;
+    margin: 0 auto 32px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 48px rgba(10,22,40,0.18);
+  }
+
+  /* ============ PAGE 1: COVER ============ */
+  .cover {
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    min-height: 1100px;
+  }
+
+  .cover-texture {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(201,168,76,0.03) 40px,
+        rgba(201,168,76,0.03) 41px
+      );
+  }
+
+  .cover-top-bar {
+    background: var(--gold);
+    height: 6px;
+    width: 100%;
+  }
+
+  .cover-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 80px 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .cover-subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    max-width: 520px;
+    margin-bottom: 60px;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 40px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+  }
+
+  .cover-meta-item label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .cover-meta-item span {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .cover-bottom {
+    padding: 40px 80px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-company-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  .cover-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+
+  .cover-right-accent {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+    background: linear-gradient(180deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%);
+    border-left: 1px solid rgba(201,168,76,0.08);
+    z-index: 1;
+  }
+
+  .cover-circle {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .cover-circle-2 {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+    height: 480px;
+    border: 1px solid rgba(201,168,76,0.06);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  /* ============ STANDARD PAGE LAYOUT ============ */
+  .page-inner {
+    padding: 72px 72px 64px;
+  }
+
+  .page-header {
+    margin-bottom: 48px;
+  }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--gray-text);
+    line-height: 1.75;
+    max-width: 640px;
+  }
+
+  .gold-rule {
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    margin: 20px 0;
+    border-radius: 2px;
+  }
+
+  /* ============ PAGE 2: OPPORTUNITY ============ */
+  .opportunity-page {
+    background: var(--off-white);
+  }
+
+  .opportunity-page .page-inner {
+    padding-top: 80px;
+  }
+
+  .letter-block {
+    background: var(--white);
+    border: 1px solid var(--gray-mid);
+    border-left: 4px solid var(--gold);
+    padding: 40px 44px;
+    margin-top: 32px;
+    position: relative;
+  }
+
+  .letter-block p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--body-text);
+    margin-bottom: 20px;
+  }
+
+  .letter-block p:last-child { margin-bottom: 0; }
+
+  .letter-block strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .opportunity-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .opp-stat {
+    background: var(--navy);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .opp-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    color: var(--gold);
+    font-weight: 300;
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .opp-stat .label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  /* ============ PAGE 3: PAIN POINTS ============ */
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .pain-card {
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    padding: 24px 26px;
+    position: relative;
+    transition: all 0.2s;
+  }
+
+  .pain-card-icon {
+    font-size: 26px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .pain-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .pain-card p {
+    font-size: 13.5px;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  .pain-card .pain-stat {
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  .pain-card.highlight {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+
+  .pain-card.highlight h4 { color: var(--gold-light); }
+  .pain-card.highlight p { color: rgba(255,255,255,0.6); }
+  .pain-card.highlight .pain-stat { color: var(--gold); }
+
+  .stat-banner {
+    background: var(--gold);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .stat-banner .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    color: var(--navy);
+    font-weight: 300;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .stat-banner p {
+    font-size: 14px;
+    color: var(--navy);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* ============ PAGE 4: AI TIERS ============ */
+  .tiers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 8px;
+  }
+
+  .tier {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--gray-mid);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .tier-label {
+    width: 100px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .tier-label .tier-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .tier-label .tier-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .tier-1 .tier-label { background: #E8EDF5; }
+  .tier-1 .tier-label .tier-name { color: var(--navy); }
+  .tier-2 .tier-label { background: var(--navy-light); }
+  .tier-2 .tier-label .tier-name { color: rgba(255,255,255,0.8); }
+  .tier-3 .tier-label { background: var(--navy); }
+  .tier-3 .tier-label .tier-name { color: var(--gold); }
+
+  .tier-body {
+    flex: 1;
+    padding: 24px 28px;
+    border-left: 1px solid var(--gray-mid);
+  }
+
+  .tier-body h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .tier-body p {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin-bottom: 12px;
+    line-height: 1.65;
+  }
+
+  .tier-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tier-tag {
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--body-text);
+    border-radius: 2px;
+  }
+
+  .tier-3 .tier-tag {
+    background: var(--gold-pale);
+    border-color: var(--gold);
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .key-message-box {
+    background: var(--navy);
+    padding: 28px 32px;
+    margin-top: 24px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .key-message-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--white);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .key-message-box p span {
+    color: var(--gold-light);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ============ PAGE 5: AI BRAIN ============ */
+  .brain-page {
+    background: var(--navy);
+    color: var(--white);
+    min-height: 1100px;
+  }
+
+  .brain-page .page-inner {
+    padding: 72px 72px 64px;
+  }
+
+  .brain-page .section-eyebrow { color: var(--gold); }
+
+  .brain-page .section-title {
+    color: var(--white);
+    font-size: 48px;
+  }
+
+  .brain-page .section-title em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .brain-page .section-intro {
+    color: rgba(255,255,255,0.65);
+  }
+
+  .brain-concept {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .brain-feature {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 24px;
+  }
+
+  .brain-feature .feat-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .brain-feature h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .brain-feature p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .before-after {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0;
+  }
+
+  .ba-card {
+    padding: 28px;
+  }
+
+  .ba-card.before {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .ba-card.after {
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .ba-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .ba-card.before .ba-label { color: rgba(255,255,255,0.4); }
+  .ba-card.after .ba-label { color: var(--gold); }
+
+  .ba-card h5 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .ba-card.before h5 { color: rgba(255,255,255,0.8); }
+  .ba-card.after h5 { color: var(--gold-light); }
+
+  .ba-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .ba-card.after p { color: rgba(255,255,255,0.65); }
+
+  .ba-arrow {
+    width: 48px;
+    text-align: center;
+    font-size: 24px;
+    color: var(--gold);
+  }
+
+  .brain-how {
+    margin-top: 28px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 28px 32px;
+  }
+
+  .brain-how h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+  }
+
+  .brain-steps {
+    display: flex;
+    gap: 0;
+  }
+
+  .brain-step {
+    flex: 1;
+    padding: 0 16px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+
+  .brain-step:last-child { border-right: none; }
+  .brain-step:first-child { padding-left: 0; }
+
+  .brain-step .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold);
+    font-weight: 300;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .brain-step p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  /* ============ PAGE 6: COWORK ============ */
+  .cowork-eyebrow { color: var(--gold) !important; }
+
+  .cowork-intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+    align-items: start;
+  }
+
+  .cowork-main-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--body-text);
+  }
+
+  .cowork-main-desc strong { color: var(--navy); }
+
+  .cowork-price-box {
+    background: var(--navy);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .cowork-price-box .price-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .cowork-price-box .price-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color: var(--white);
+    font-weight: 300;
+    line-height: 1;
+    display: block;
+  }
+
+  .cowork-price-box .price-period {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .cowork-price-box .price-note {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    display: inline-block;
+  }
+
+  .cowork-flow {
+    margin-top: 28px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    padding: 28px 32px;
+  }
+
+  .cowork-flow h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .flow-steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .flow-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .flow-step .f-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .flow-step .f-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .flow-step .f-desc {
+    font-size: 11.5px;
+    color: var(--gray-text);
+    line-height: 1.4;
+  }
+
+  .flow-arrow {
+    color: var(--gold);
+    font-size: 20px;
+    padding: 0 4px;
+    margin-top: -16px;
+  }
+
+  .cowork-scenarios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .scenario-card {
+    background: var(--gold-pale);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-left: 3px solid var(--gold);
+    padding: 20px 22px;
+  }
+
+  .scenario-card .sc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .scenario-card p {
+    font-size: 13.5px;
+    color: var(--body-text);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .cowork-caps {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .cap-item {
+    background: var(--navy);
+    padding: 20px 18px;
+  }
+
+  .cap-item .cap-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+  .cap-item h5 { font-size: 13px; font-weight: 600; color: var(--gold-light); margin-bottom: 6px; }
+  .cap-item p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  /* ============ PAGE 7: DAY IN THE LIFE ============ */
+  .timeline {
+    margin-top: 16px;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 84px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gray-mid) 100%);
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .tl-time {
+    width: 84px;
+    min-width: 84px;
+    text-align: right;
+    padding-right: 24px;
+    padding-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  .tl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold);
+    margin-top: 20px;
+    margin-right: 20px;
+    min-width: 12px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tl-content {
+    flex: 1;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    padding: 16px 20px;
+  }
+
+  .tl-content h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .tl-content p {
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.55;
+  }
+
+  .tl-ai-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* ============ PAGE 8: SUBCONTRACTORS ============ */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+    align-items: start;
+  }
+
+  .pain-box {
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    padding: 28px;
+  }
+
+  .pain-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .pain-list {
+    list-style: none;
+  }
+
+  .pain-list li {
+    font-size: 14px;
+    color: var(--body-text);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .pain-list li:last-child { border-bottom: none; }
+
+  .pain-list li::before {
+    content: '✕';
+    color: #C0392B;
+    font-size: 11px;
+    margin-top: 3px;
+    min-width: 14px;
+  }
+
+  .solution-box {
+    background: var(--navy);
+    padding: 28px;
+  }
+
+  .solution-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .solution-list {
+    list-style: none;
+  }
+
+  .solution-list li {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.7);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .solution-list li:last-child { border-bottom: none; }
+
+  .solution-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-size: 13px;
+    margin-top: 1px;
+    min-width: 14px;
+    font-weight: 700;
+  }
+
+  .scenario-full {
+    background: var(--gold-pale);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    margin-top: 24px;
+  }
+
+  .scenario-full .sf-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .scenario-full p {
+    font-size: 14.5px;
+    color: var(--body-text);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ============ PAGE 12: ROADMAP ============ */
+  .roadmap {
+    margin-top: 16px;
+  }
+
+  .roadmap-phase {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  .phase-label {
+    width: 120px;
+    min-width: 120px;
+    padding: 0 20px 0 0;
+  }
+
+  .phase-label .phase-month {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .phase-label .phase-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .phase-1 .phase-month { color: var(--gray-text); }
+  .phase-1 .phase-name { color: var(--navy); }
+  .phase-2 .phase-month { color: var(--gold); }
+  .phase-2 .phase-name { color: var(--navy-light); }
+  .phase-3 .phase-month { color: var(--gold); }
+  .phase-3 .phase-name { color: var(--navy); }
+
+  .phase-body {
+    flex: 1;
+    border-left: 3px solid;
+    padding-left: 20px;
+  }
+
+  .phase-1 .phase-body { border-color: var(--gray-mid); }
+  .phase-2 .phase-body { border-color: var(--gold); }
+  .phase-3 .phase-body { border-color: var(--navy); }
+
+  .phase-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .phase-item {
+    border: 1px solid;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .phase-1 .phase-item {
+    background: var(--gray-light);
+    border-color: var(--gray-mid);
+    color: var(--body-text);
+  }
+
+  .phase-2 .phase-item {
+    background: var(--gold-pale);
+    border-color: rgba(201,168,76,0.4);
+    color: var(--navy);
+  }
+
+  .phase-3 .phase-item {
+    background: var(--navy);
+    border-color: var(--navy-light);
+    color: var(--white);
+  }
+
+  .phase-cost {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gray-text);
+  }
+
+  .phase-2 .phase-cost, .phase-3 .phase-cost { color: var(--gold); }
+
+  .cost-table {
+    margin-top: 28px;
+    border: 1px solid var(--gray-mid);
+    overflow: hidden;
+  }
+
+  .cost-table .ct-header {
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 14px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .cost-table .ct-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--gray-mid);
+    font-size: 13.5px;
+  }
+
+  .cost-table .ct-row:nth-child(even) { background: var(--gray-light); }
+  .cost-table .ct-row:last-child { border-bottom: none; }
+
+  .cost-table .ct-row .tool { font-weight: 600; color: var(--navy); }
+  .cost-table .ct-row .cost { color: var(--gold); font-weight: 600; font-family: 'DM Mono', monospace; }
+  .cost-table .ct-row .use { color: var(--gray-text); font-size: 12.5px; }
+
+  .cost-total {
+    background: var(--navy);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cost-total span { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 500; }
+  .cost-total strong { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold); font-weight: 400; }
+
+  /* ============ PAGE 13: WHY ME ============ */
+  .why-me-page {
+    background: var(--off-white);
+  }
+
+  .why-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .wm-card {
+    background: var(--white);
+    border: 1px solid var(--gray-mid);
+    padding: 28px 26px;
+  }
+
+  .wm-card .wm-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .wm-card h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .wm-card p {
+    font-size: 13.5px;
+    color: var(--gray-text);
+    line-height: 1.65;
+  }
+
+  .commitment-box {
+    background: var(--navy);
+    border-left: 4px solid var(--gold);
+    padding: 32px 36px;
+    margin-top: 24px;
+    grid-column: 1 / -1;
+  }
+
+  .commitment-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--white);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .commitment-box p em {
+    color: var(--gold-light);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ============ PAGE 14: CLOSING ============ */
+  .closing-page {
+    background: var(--navy);
+    color: var(--white);
+    min-height: 1100px;
+  }
+
+  .closing-page .page-inner {
+    padding: 80px 72px 64px;
+  }
+
+  .closing-page .section-eyebrow { color: var(--gold); }
+
+  .closing-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+
+  .closing-quote em {
+    color: var(--gold-light);
+    font-style: normal;
+  }
+
+  .closing-message {
+    max-width: 600px;
+  }
+
+  .closing-message p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .closing-message strong { color: var(--white); }
+
+  .next-steps {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .ns-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 24px;
+  }
+
+  .ns-card .ns-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    color: var(--gold);
+    font-weight: 300;
+    line-height: 1;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .ns-card h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .ns-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .final-line {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .final-line p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .final-line strong {
+    color: var(--gold-light);
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  /* ============ PAGE NUMBERS / FOOTER ============ */
+  .page-footer {
+    position: absolute;
+    bottom: 28px;
+    left: 72px;
+    right: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 14px;
+  }
+
+  .page-footer .pf-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-text);
+  }
+
+  .page-footer .pf-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+
+  .dark-footer .pf-brand { color: rgba(255,255,255,0.2); }
+  .dark-footer .pf-num { color: rgba(201,168,76,0.5); }
+  .dark-footer { border-top-color: rgba(255,255,255,0.06); }
+
+  /* ============ MISC ============ */
+  .page-rule {
+    border: none;
+    border-top: 2px solid var(--gold);
+    margin: 32px 0;
+    opacity: 0.3;
+  }
+
+  .highlight-text {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body { background: white; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      page-break-after: always;
+      width: 100%;
+    }
+    .page:last-child { page-break-after: avoid; }
+    @page { size: letter portrait; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== PAGE 1: COVER ======== -->
+<div class="page cover">
+  <div class="cover-texture"></div>
+  <div class="cover-right-accent"></div>
+  <div class="cover-circle"></div>
+  <div class="cover-circle-2"></div>
+  <div class="cover-top-bar"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">Prepared for Impact Commercial Services, LLC</div>
+    <h1 class="cover-title">AI Integration<br>for <em>Impact</em><br>Commercial<br>Services</h1>
+    <p class="cover-subtitle">A practical overview of how artificial intelligence can work for you — and why I'm the right person to build it.</p>
+    <div class="cover-divider"></div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Prepared By</label>
+        <span>Garrett Cosgrove</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Phone</label>
+        <span>(205) 266-4963</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Email</label>
+        <span>cosgrove.garrett@gmail.com</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <span class="cover-company-name">Impact Commercial Services</span>
+    <span class="cover-tag">Confidential · For Discussion Only</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 2: THE OPPORTUNITY ======== -->
+<div class="page opportunity-page">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">The Opportunity</span>
+      <h2 class="section-title">The companies that adopt<br>AI first will win.</h2>
+      <div class="gold-rule"></div>
+    </div>
+    <div class="letter-block">
+      <p>Hutch — you've built Impact Commercial Services on relationships, expertise, and a standard of transparency that most firms can't match. That's not changing. What I'm presenting here isn't a technology takeover. It's a way to <strong>give you back time</strong> — the one thing you can't manufacture more of.</p>
+      <p>The construction and development industry is one of the least digitized sectors in the economy. That's a problem for companies still stuck in old workflows. But for a forward-thinking operator like you, <strong>it's an opening</strong>. The firms that start building AI infrastructure now will have a measurable advantage in speed, communication, and professionalism within 12–18 months.</p>
+      <p>Your highest value is in the room — building relationships with investors, lenders, city officials, and subs. <strong>Every hour you spend on emails, reports, and follow-ups is an hour you're not in that room.</strong> My job would be to make sure AI handles as much of that busywork as possible, so you can stay focused on what you do best.</p>
+      <p>This document walks through exactly how that works — practically, affordably, and starting now.</p>
+    </div>
+    <div class="opportunity-stats">
+      <div class="opp-stat">
+        <span class="num">30–40%</span>
+        <span class="label">of a construction manager's day spent on tasks AI can automate</span>
+      </div>
+      <div class="opp-stat">
+        <span class="num">$31B</span>
+        <span class="label">lost annually in construction due to communication inefficiencies</span>
+      </div>
+      <div class="opp-stat">
+        <span class="num">98%</span>
+        <span class="label">of projects run over budget or behind schedule — usually due to process gaps</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">02</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 3: PAIN POINTS ======== -->
+<div class="page">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">Industry Pain Points</span>
+      <h2 class="section-title">Where time goes —<br>and why it doesn't have to.</h2>
+      <div class="gold-rule"></div>
+      <p class="section-intro">These aren't hypothetical problems. They're the daily reality for every construction management owner at your level — and the exact problems AI was built to solve.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="pain-card-icon">📧</span>
+        <h4>Email Overload</h4>
+        <p>Dozens of emails daily from subs, investors, city reps, and your team — each requiring a thoughtful, professional response. The inbox never empties.</p>
+        <div class="pain-stat">↑ Est. 2–3 hours/day on email alone</div>
+      </div>
+      <div class="pain-card highlight">
+        <span class="pain-card-icon">🔧</span>
+        <h4>Subcontractor Coordination</h4>
+        <p>Chasing bids, following up on RFIs, tracking payments and lien waivers — the coordination tax is enormous and almost entirely repetitive.</p>
+        <div class="pain-stat">↑ #1 cause of project delays</div>
+      </div>
+      <div class="pain-card">
+        <span class="pain-card-icon">📋</span>
+        <h4>Report Generation</h4>
+        <p>Project status reports, budget summaries, lender updates — pulling data from multiple sources and formatting them professionally takes hours every week.</p>
+        <div class="pain-stat">↑ 5–10 hrs/week in documentation</div>
+      </div>
+      <div class="pain-card">
+        <span class="pain-card-icon">🏛️</span>
+        <h4>Permits &amp; Compliance</h4>
+        <p>Tracking permit status across multiple jurisdictions, responding to city requests, and staying ahead of changing code requirements is a full-time job in itself.</p>
+        <div class="pain-stat">↑ Delays cost $10K–$50K+ per project</div>
+      </div>
+      <div class="pain-card">
+        <span class="pain-card-icon">📁</span>
+        <h4>Document Chaos</h4>
+        <p>Contracts, bids, drawings, photos, permits — scattered across email threads, Google Drive folders, and local hard drives with no consistent naming or structure.</p>
+        <div class="pain-stat">↑ PMs spend 30% of day searching for info</div>
+      </div>
+      <div class="pain-card">
+        <span class="pain-card-icon">🏦</span>
+        <h4>Lender &amp; Investor Communication</h4>
+        <p>Funding packages, draw requests, investment memos — high-stakes communication that demands polish, precision, and Hutch's personal credibility behind every word.</p>
+        <div class="pain-stat">↑ Presentation quality directly impacts capital</div>
+      </div>
+    </div>
+    <div class="stat-banner">
+      <span class="big-num">500–1,000</span>
+      <p>Hours recovered per year by early AI adopters in construction and real estate development — the equivalent of hiring 2–4 additional employees. <strong>Source: Bluebeam 2025 Industry Survey</strong></p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">03</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 4: WHAT AI CAN DO ======== -->
+<div class="page">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">Practical Capabilities</span>
+      <h2 class="section-title">What AI can actually do —<br>no jargon, no hype.</h2>
+      <div class="gold-rule"></div>
+      <p class="section-intro">AI isn't one thing. It's a spectrum of tools ranging from smart assistants to fully autonomous workers. Here's how to think about the three levels — and where each fits in your business.</p>
+    </div>
+    <div class="tiers-container">
+      <div class="tier tier-1">
+        <div class="tier-label">
+          <span class="tier-icon">💬</span>
+          <span class="tier-name">Tier 1</span>
+        </div>
+        <div class="tier-body">
+          <h4>AI Assistants — Ask and Receive</h4>
+          <p>You talk to it, it responds. Think of it as the world's smartest, fastest research assistant and writer rolled into one. You're already doing this with ChatGPT. The difference is in how you use it — and what you feed it.</p>
+          <div class="tier-examples">
+            <span class="tier-tag">Draft emails</span>
+            <span class="tier-tag">Summarize documents</span>
+            <span class="tier-tag">Research answers</span>
+            <span class="tier-tag">Create templates</span>
+            <span class="tier-tag">Answer team questions</span>
+          </div>
+        </div>
+      </div>
+      <div class="tier tier-2">
+        <div class="tier-label">
+          <span class="tier-icon">⚙️</span>
+          <span class="tier-name">Tier 2</span>
+        </div>
+        <div class="tier-body">
+          <h4>AI Automation — Set It and Forget It</h4>
+          <p>Rules-based workflows triggered automatically. "Every Monday, generate this report." "When a new email arrives from this person, flag it and summarize it." You define the trigger, AI executes — no one has to remember.</p>
+          <div class="tier-examples">
+            <span class="tier-tag">Weekly briefings</span>
+            <span class="tier-tag">Follow-up reminders</span>
+            <span class="tier-tag">File organization</span>
+            <span class="tier-tag">Status summaries</span>
+            <span class="tier-tag">Report scheduling</span>
+          </div>
+        </div>
+      </div>
+      <div class="tier tier-3">
+        <div class="tier-label">
+          <span class="tier-icon">🤖</span>
+          <span class="tier-name">Tier 3</span>
+        </div>
+        <div class="tier-body">
+          <h4>AI Agents — Multi-Step Autonomous Work</h4>
+          <p>Give it a goal. It figures out the steps, executes them, and delivers a finished result — pulling from multiple sources, making decisions, and working independently while you focus elsewhere. This is where Cowork lives.</p>
+          <div class="tier-examples">
+            <span class="tier-tag">End-to-end report generation</span>
+            <span class="tier-tag">Cross-document research</span>
+            <span class="tier-tag">Multi-source data synthesis</span>
+            <span class="tier-tag">Autonomous file management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="key-message-box">
+      <p>"Tools that handle the busywork — <span>so you can focus on the deals.</span>"</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">04</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 5: THE AI BRAIN ======== -->
+<div class="page brain-page">
+  <div class="page-inner">
+    <span class="section-eyebrow">Featured: Flagship System</span>
+    <h2 class="section-title" style="font-size:46px;">Your <em>AI Brain:</em><br>A Digital Version of You</h2>
+    <div class="gold-rule" style="background:var(--gold);"></div>
+    <p class="section-intro">Imagine an AI that doesn't just know construction — it knows <em style="color:var(--gold-light);">you</em>. Your tone. Your relationships. The way you handle a lender vs. a sub vs. your team. Built from your own documents, emails, and SOPs — this is your most powerful AI tool.</p>
+
+    <div class="brain-concept">
+      <div class="brain-feature">
+        <span class="feat-icon">✍️</span>
+        <h5>Writes in Your Voice</h5>
+        <p>Drafts emails, memos, and status updates that sound like you — not like a robot. Built from your past correspondence and communication style.</p>
+      </div>
+      <div class="brain-feature">
+        <span class="feat-icon">📚</span>
+        <h5>Knows Your Business</h5>
+        <p>Fed with your SOPs, templates, contracts, and process documents — it understands how Impact works, not just how construction works in general.</p>
+      </div>
+      <div class="brain-feature">
+        <span class="feat-icon">🎯</span>
+        <h5>Answers for You</h5>
+        <p>Your team asks a process question. Instead of waiting for you, they get the answer you'd give — instantly, any time of day.</p>
+      </div>
+      <div class="brain-feature">
+        <span class="feat-icon">🔄</span>
+        <h5>Gets Smarter Over Time</h5>
+        <p>As you add documents, refine preferences, and provide feedback, it continuously improves. The longer it runs, the better it knows you.</p>
+      </div>
+    </div>
+
+    <div class="before-after">
+      <div class="ba-card before">
+        <span class="ba-label">Before</span>
+        <h5>Lender Project Update Email</h5>
+        <p>Hutch sits down, pulls notes from 3 sources, writes a 4-paragraph update from scratch, reviews it twice, and sends. <strong style="color:rgba(255,255,255,0.7);">45 minutes.</strong></p>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-card after">
+        <span class="ba-label">After · AI Brain</span>
+        <h5>Lender Project Update Email</h5>
+        <p>AI Brain drafts the full email in Hutch's voice from the latest project data. He reads it, makes one small edit, sends. <strong style="color:var(--gold-light);">3 minutes.</strong></p>
+      </div>
+    </div>
+
+    <div class="brain-how">
+      <h4>How the AI Brain Is Built</h4>
+      <div class="brain-steps">
+        <div class="brain-step">
+          <span class="step-num">01</span>
+          <p>Collect Hutch's emails, SOPs, templates, and process docs</p>
+        </div>
+        <div class="brain-step">
+          <span class="step-num">02</span>
+          <p>Upload into a dedicated Claude Project with full context</p>
+        </div>
+        <div class="brain-step">
+          <span class="step-num">03</span>
+          <p>Write system instructions that capture tone, priorities, and style</p>
+        </div>
+        <div class="brain-step">
+          <span class="step-num">04</span>
+          <p>Test, refine, and deploy — team gets instant access</p>
+        </div>
+        <div class="brain-step">
+          <span class="step-num">05</span>
+          <p>Continuously update as the business evolves</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer dark-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">05</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 6: COWORK ======== -->
+<div class="page">
+  <div class="page-inner">
+    <span class="section-eyebrow cowork-eyebrow">Featured: Flagship Tool</span>
+    <h2 class="section-title">Meet Cowork:<br>The AI That Actually Does the Work</h2>
+    <div class="gold-rule"></div>
+    <p class="section-intro">Most AI tools tell you what to do. Cowork does it. It's a digital coworker that lives on your desktop, connects to your files and apps, and completes multi-step tasks from start to finish — while you're doing something else.</p>
+
+    <div class="cowork-intro-grid" style="grid-template-columns:1fr;">
+      <div class="cowork-main-desc">
+        <p>Built by Anthropic (the same company behind Claude), <strong>Cowork is not a chatbot.</strong> It's an autonomous AI agent that lives on your desktop. You give it a task — it goes and handles it. It reads your files, writes new ones, organizes folders, generates formatted reports, saves drafts to your Google Drive, checks your calendar, and more. All without you coordinating a single step.</p>
+        <p style="margin-top:16px;">You describe the outcome. Cowork figures out the plan and executes it. You can step away, drive to a job site, take a call — and come back to <strong>finished work.</strong></p>
+        <p style="margin-top:16px;"><strong>No coding. No technical setup. No new workflows to learn.</strong> Just tell it what you need in plain English. It connects to Gmail, Google Drive, and Google Calendar out of the box — tools you're already using.</p>
+      </div>
+    </div>
+
+    <div class="cowork-flow">
+      <h4>How Cowork Works</h4>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <span class="f-icon">📱</span>
+          <span class="f-title">You Assign the Task</span>
+          <span class="f-desc">Type, voice memo, or text from your phone</span>
+        </div>
+        <div class="flow-arrow">›</div>
+        <div class="flow-step">
+          <span class="f-icon">🧠</span>
+          <span class="f-title">Cowork Plans</span>
+          <span class="f-desc">Breaks the task into steps, identifies what it needs</span>
+        </div>
+        <div class="flow-arrow">›</div>
+        <div class="flow-step">
+          <span class="f-icon">⚙️</span>
+          <span class="f-title">Executes Autonomously</span>
+          <span class="f-desc">Reads files, writes documents, accesses Gmail &amp; Drive</span>
+        </div>
+        <div class="flow-arrow">›</div>
+        <div class="flow-step">
+          <span class="f-icon">✅</span>
+          <span class="f-title">Delivers Results</span>
+          <span class="f-desc">Finished work waiting for your review</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cowork-scenarios">
+      <div class="scenario-card">
+        <span class="sc-label">📍 In the Truck</span>
+        <p>"Hutch voice-texts on the way to a site visit: 'Pull last week's sub updates and draft a lender summary.' When he parks, the draft is in his Drive."</p>
+      </div>
+      <div class="scenario-card">
+        <span class="sc-label">📅 Every Monday, 7am</span>
+        <p>"Cowork automatically generates a weekly briefing — active projects, outstanding items, upcoming permit deadlines — formatted and ready before Hutch's first coffee."</p>
+      </div>
+      <div class="scenario-card">
+        <span class="sc-label">📂 Quarterly File Cleanup</span>
+        <p>"Point Cowork at a messy project folder. It renames, reorganizes, and produces a document index. What took a Friday afternoon now takes 8 minutes."</p>
+      </div>
+      <div class="scenario-card">
+        <span class="sc-label">📊 Report Day</span>
+        <p>"Three project data files go in. A formatted, professional lender progress report comes out — complete, accurate, and in Impact's standard format."</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">06</span>
+  </div>
+</div>
+
+
+
+<!-- ======== PAGE 7: SUBCONTRACTOR MANAGEMENT ======== -->
+<div class="page">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">Operational Deep Dive · 01</span>
+      <h2 class="section-title">Subcontractor Management</h2>
+      <div class="gold-rule"></div>
+    </div>
+    <div class="two-col">
+      <div class="pain-box">
+        <h4>The Problem Today</h4>
+        <ul class="pain-list">
+          <li>Chasing bids and waiting for responses that may never come</li>
+          <li>Manually tracking which subs are onboarded, insured, and compliant</li>
+          <li>Writing individual follow-up emails to 10+ subs per project</li>
+          <li>Lien waiver and pay application management is almost entirely manual</li>
+          <li>No centralized record of sub performance across projects</li>
+          <li>Onboarding a new sub requires starting from scratch every time</li>
+        </ul>
+      </div>
+      <div class="solution-box">
+        <h4>What AI Makes Possible</h4>
+        <ul class="solution-list">
+          <li>Automated bid request emails — drafted, scheduled, and tracked</li>
+          <li>AI-drafted RFI follow-ups generated every Friday for review</li>
+          <li>Sub database built and maintained by Cowork — searchable by trade, location, performance</li>
+          <li>Contract review assistant flags missing terms or inconsistencies</li>
+          <li>Payment milestone tracking with automatic alert emails</li>
+          <li>Onboarding checklist auto-populated and tracked per sub</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scenario-full">
+      <span class="sf-label">🤖 Cowork In Action — Every Friday</span>
+      <p>"Cowork reviews all active project RFI logs. Any sub with an open, unanswered RFI gets a professional follow-up email drafted and queued for your team's review — with the project name, RFI number, and original request pre-filled. What used to take 45 minutes of hunting through email threads takes 90 seconds of review."</p>
+    </div>
+    <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="background:var(--navy);padding:20px 18px;text-align:center;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);font-weight:300;display:block;line-height:1;">70%</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.4;display:block;margin-top:6px;">reduction in time spent on sub coordination with automated follow-up workflows</span>
+      </div>
+      <div style="background:var(--navy);padding:20px 18px;text-align:center;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);font-weight:300;display:block;line-height:1;">Zero</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.4;display:block;margin-top:6px;">missed follow-ups when automated reminders handle the tracking</span>
+      </div>
+      <div style="background:var(--navy);padding:20px 18px;text-align:center;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);font-weight:300;display:block;line-height:1;">1 DB</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.4;display:block;margin-top:6px;">single searchable subcontractor database across all projects and trades</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">07</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 8: PERMITS & COMPLIANCE ======== -->
+<div class="page" style="background:var(--off-white);">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">Operational Deep Dive · 02</span>
+      <h2 class="section-title">Permits, Compliance &amp;<br>City / State Communication</h2>
+      <div class="gold-rule"></div>
+    </div>
+    <div class="two-col">
+      <div class="pain-box">
+        <h4>The Problem Today</h4>
+        <ul class="pain-list">
+          <li>Permit status tracked across emails, spreadsheets, and memory</li>
+          <li>Responding to city/state document requests is time-consuming and inconsistent</li>
+          <li>Permit correspondence scattered across inboxes and drive folders</li>
+          <li>Missed deadlines trigger stop-work orders and costly delays</li>
+          <li>Building code changes aren't caught until they cause a problem</li>
+          <li>No audit trail when a dispute or inspection requires documentation</li>
+        </ul>
+      </div>
+      <div class="solution-box">
+        <h4>What AI Makes Possible</h4>
+        <ul class="solution-list">
+          <li>Centralized permit tracker with status, deadlines, and responsible parties</li>
+          <li>AI-drafted formal response letters to city officials — in the right tone</li>
+          <li>All permit correspondence auto-organized by project and jurisdiction</li>
+          <li>Deadline reminders fired automatically before critical dates</li>
+          <li>Code change monitoring — AI flags relevant updates for your market</li>
+          <li>Full documentation package assembled instantly for inspections or disputes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scenario-full">
+      <span class="sf-label">🤖 Cowork In Action — Permit Package Assembly</span>
+      <p>"City inspector requests full documentation for a project review. You tell Cowork: 'Pull all permit correspondence, inspection reports, and compliance documents for the Oak Creek project and organize them into a single folder with a cover summary.' In minutes, you have a clean, professional package ready to share — not a two-hour search through email."</p>
+    </div>
+    <div style="margin-top:24px;background:var(--navy);padding:28px 32px;border-left:4px solid var(--gold);">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);font-weight:300;font-style:italic;line-height:1.6;">Your relationships with city and state reps are a competitive advantage. AI makes sure you always show up to those conversations organized, prepared, and professional — every time.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">08</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 9: FUNDING & INVESTORS ======== -->
+<div class="page">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">Operational Deep Dive · 03</span>
+      <h2 class="section-title">Funding &amp; Lender Communication</h2>
+      <div class="gold-rule"></div>
+      <p class="section-intro">Capital is the oxygen of development. The quality and consistency of your communication with lenders and investors directly impacts your ability to close deals and maintain relationships. AI makes your best possible presentation every single time.</p>
+    </div>
+    <div class="two-col">
+      <div class="pain-box">
+        <h4>The Problem Today</h4>
+        <ul class="pain-list">
+          <li>Funding packages take days to compile, format, and review</li>
+          <li>Investment memos written under time pressure rarely show Hutch's best work</li>
+          <li>Lender relationships go quiet between active projects</li>
+          <li>Draw request documentation is manually intensive each cycle</li>
+          <li>Executive summaries rewritten from scratch for each new deal</li>
+        </ul>
+      </div>
+      <div class="solution-box">
+        <h4>What AI Makes Possible</h4>
+        <ul class="solution-list">
+          <li>Investment memo drafts generated from raw deal data in minutes</li>
+          <li>Proforma narrative summaries written in a consistent, professional voice</li>
+          <li>Lender update emails drafted automatically on a set schedule</li>
+          <li>Draw request documentation compiled and formatted by Cowork</li>
+          <li>Deal one-pagers generated instantly for new project introductions</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:var(--gold-pale);border:1px solid rgba(201,168,76,0.3);border-left:4px solid var(--gold);padding:24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:10px;">AI Brain Connection</span>
+        <p style="font-size:14px;color:var(--body-text);line-height:1.65;">Every communication that goes to a lender or investor runs through the AI Brain — which means it sounds like Hutch. The relationships are human. The workload is AI-managed.</p>
+      </div>
+      <div style="background:var(--navy);padding:24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:10px;">Real Example</span>
+        <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65;">New deal identified on a Tuesday. By Thursday, Hutch has a polished executive summary, project narrative, and intro email ready — all generated from his notes and deal data.</p>
+      </div>
+    </div>
+    <div class="scenario-full" style="margin-top:20px;">
+      <span class="sf-label">💡 High-Value Scenario</span>
+      <p>"A lender you haven't talked to in 6 months needs a current portfolio overview before a call Friday. You ask the AI Brain: 'Draft a two-page portfolio summary for [Lender Name] covering our active projects, completed deals this year, and our current pipeline — in the format they prefer.' Draft delivered in 4 minutes. Call is your best conversation in a year."</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">09</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 10: TEAM OPERATIONS ======== -->
+<div class="page" style="background:var(--off-white);">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">Operational Deep Dive · 04</span>
+      <h2 class="section-title">Team Operations &amp; SOPs</h2>
+      <div class="gold-rule"></div>
+      <p class="section-intro">Your team already knows how to do the work — and they have the processes to back it up. The opportunity isn't to reinvent those SOPs. It's to take what's already working and put AI to work executing the repetitive parts automatically.</p>
+    </div>
+    <div class="two-col">
+      <div class="pain-box">
+        <h4>The Opportunity</h4>
+        <ul class="pain-list">
+          <li>Many repeatable team tasks follow the same steps every time — perfect for automation</li>
+          <li>Manual execution of routine workflows pulls skilled people away from higher-value work</li>
+          <li>Consistent SOP execution breaks down under workload pressure or staff changes</li>
+          <li>Time spent on status tracking, reporting, and follow-up is largely automatable</li>
+          <li>Team coordination across multiple active projects creates communication overhead</li>
+        </ul>
+      </div>
+      <div class="solution-box">
+        <h4>What AI Makes Possible</h4>
+        <ul class="solution-list">
+          <li>Existing SOPs converted into autonomous agent workflows — AI executes the steps, your team oversees</li>
+          <li>Routine checklists triggered automatically at the right project phase</li>
+          <li>Meeting recordings transcribed and action items assigned without anyone manually writing notes</li>
+          <li>Status updates and internal reports generated on schedule — no one builds them manually</li>
+          <li>Repetitive communication tasks handed off to AI agents managed by your team</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scenario-full">
+      <span class="sf-label">🤖 Cowork In Action — Turning Documents Into SOPs</span>
+      <p>"Your team has a folder of past project files, email threads, and process notes for how Impact handles permit expediting. Cowork reads through all of it, identifies the repeatable steps, and produces a clean, numbered SOP — complete with responsible roles and a checklist. That document becomes the standard. New hires follow it on day one. No Hutch required."</p>
+    </div>
+    <div style="margin-top:24px;background:var(--white);border:1px solid var(--gray-mid);padding:28px 32px;">
+      <h4 style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);margin-bottom:16px;font-weight:600;">The Team Q&amp;A Bot — In Plain Terms</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <p style="font-size:13.5px;color:var(--gray-text);line-height:1.65;margin-bottom:12px;"><strong style="color:var(--navy);">Your Project Manager asks:</strong> "What's our standard process for handling a change order request from a sub?"</p>
+          <p style="font-size:13.5px;color:var(--body-text);background:var(--gold-pale);padding:12px 16px;border-left:3px solid var(--gold);line-height:1.6;font-style:italic;">"The AI Brain answers — in Hutch's words, based on Hutch's documented process — immediately. No waiting for a callback."</p>
+        </div>
+        <div>
+          <p style="font-size:13.5px;color:var(--gray-text);line-height:1.65;margin-bottom:12px;">The result is a team that moves faster, makes fewer errors, and bothers Hutch with fewer routine questions — freeing him for the high-value work only he can do.</p>
+          <p style="font-size:13.5px;color:var(--gray-text);line-height:1.65;">And when Hutch's answer to something changes, we update the Brain — not 15 separate documents.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">10</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 11: ROADMAP & COST ======== -->
+<div class="page">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">Implementation Plan</span>
+      <h2 class="section-title">Where to Start:<br>Quick Wins, Low Cost.</h2>
+      <div class="gold-rule"></div>
+      <p class="section-intro">No massive investment required to get started. The strategy is simple: prove value fast with low-cost tools, then scale what's working.</p>
+    </div>
+    <div class="roadmap">
+      <div class="roadmap-phase phase-1">
+        <div class="phase-label">
+          <span class="phase-month">Month 1</span>
+          <span class="phase-name">Quick Wins</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-items">
+            <span class="phase-item">AI Brain setup</span>
+            <span class="phase-item">Claude Pro subscription</span>
+            <span class="phase-item">Cowork daily briefings</span>
+            <span class="phase-item">Email drafting workflow</span>
+            <span class="phase-item">Google Drive organization</span>
+          </div>
+          <span class="phase-cost">Est. cost: $20/month · Time to value: Week 1</span>
+        </div>
+      </div>
+      <div class="roadmap-phase phase-2">
+        <div class="phase-label">
+          <span class="phase-month">Month 2–3</span>
+          <span class="phase-name">Build Out</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-items">
+            <span class="phase-item">Sub follow-up automation</span>
+            <span class="phase-item">Permit tracking system</span>
+            <span class="phase-item">Report templates in Cowork</span>
+            <span class="phase-item">Team Q&amp;A Bot deployment</span>
+            <span class="phase-item">Meeting summary automation</span>
+          </div>
+          <span class="phase-cost">Est. cost: $40–60/month · Zapier free tier + Claude Pro</span>
+        </div>
+      </div>
+      <div class="roadmap-phase phase-3">
+        <div class="phase-label">
+          <span class="phase-month">Month 4+</span>
+          <span class="phase-name">Scale</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-items">
+            <span class="phase-item">Custom API integrations</span>
+            <span class="phase-item">Team-wide AI access</span>
+            <span class="phase-item">Advanced agent workflows</span>
+            <span class="phase-item">Lender communication system</span>
+            <span class="phase-item">Full SOP library</span>
+          </div>
+          <span class="phase-cost">Est. cost: $100–200/month · Scales with demonstrated ROI</span>
+        </div>
+      </div>
+    </div>
+    <div class="cost-table">
+      <div class="ct-header">
+        <span>Tool</span>
+        <span>Monthly Cost</span>
+        <span>What It Powers</span>
+      </div>
+      <div class="ct-row">
+        <span class="tool">Claude Pro (Anthropic)</span>
+        <span class="cost">$20</span>
+        <span class="use">AI Brain, Cowork, daily automation</span>
+      </div>
+      <div class="ct-row">
+        <span class="tool">Google Workspace</span>
+        <span class="cost">Already using</span>
+        <span class="use">Gmail, Drive, Calendar connectors</span>
+      </div>
+      <div class="ct-row">
+        <span class="tool">Zapier (Free Tier)</span>
+        <span class="cost">$0</span>
+        <span class="use">Basic email and workflow triggers</span>
+      </div>
+      <div class="ct-row">
+        <span class="tool">Make.com (Free Tier)</span>
+        <span class="cost">$0</span>
+        <span class="use">Advanced automation flows</span>
+      </div>
+      <div class="ct-row">
+        <span class="tool">Notion / Google Drive</span>
+        <span class="cost">$0–10</span>
+        <span class="use">SOP library and knowledge base</span>
+      </div>
+      <div class="cost-total">
+        <span>Month 1 Starting Cost</span>
+        <strong>$20 / month</strong>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">11</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 12: WHY ME ======== -->
+<div class="page why-me-page">
+  <div class="page-inner">
+    <div class="page-header">
+      <span class="section-eyebrow">The Role</span>
+      <h2 class="section-title">Why you need someone<br>doing this full-time.</h2>
+      <div class="gold-rule"></div>
+      <p class="section-intro">AI tools don't manage themselves. They need someone who builds them right, monitors what's working, and evolves them as the technology improves. That's a full-time job — and it's the job I'm here to do.</p>
+    </div>
+    <div class="why-me-grid">
+      <div class="wm-card">
+        <span class="wm-icon">⚡</span>
+        <h5>AI Is Moving Fast</h5>
+        <p>The tools available today are significantly more capable than 12 months ago — and 12 months from now will be another leap forward. You need someone whose job it is to stay current, evaluate new tools, and upgrade your stack before your competitors do.</p>
+      </div>
+      <div class="wm-card">
+        <span class="wm-icon">🔨</span>
+        <h5>I Build It — You Use It</h5>
+        <p>You shouldn't have to learn how to configure Claude, set up an automation, or understand API connections. I handle all of that. You describe what you need. I figure out how to build it and make it work.</p>
+      </div>
+      <div class="wm-card">
+        <span class="wm-icon">📈</span>
+        <h5>Grows With the Company</h5>
+        <p>As Impact takes on more projects, more subs, and more team members, the AI systems scale too. I'm not a one-time setup — I'm a continuous build. Every quarter, your systems get smarter and more useful.</p>
+      </div>
+      <div class="wm-card">
+        <span class="wm-icon">🤝</span>
+        <h5>A Real Team Member</h5>
+        <p>I'm not a consultant who disappears after the pitch. I work beside you — learning how Impact operates, what matters to you, and how to make AI serve your specific way of doing business.</p>
+      </div>
+      <div class="commitment-box">
+        <p>"I'm not here to hand you a list of tools. I'm here to <em>build them, run them, and make sure they actually work for you.</em> If something isn't saving you time, we change it. That's the job."</p>
+      </div>
+    </div>
+    <div style="margin-top:20px;background:var(--white);border:1px solid var(--gray-mid);padding:24px 28px;">
+      <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:12px;">What I Bring to This Role</span>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="background:var(--navy);color:var(--white);padding:8px 16px;font-size:13px;font-weight:500;">Hands-on with Claude &amp; Claude Cowork</span>
+        <span style="background:var(--navy);color:var(--white);padding:8px 16px;font-size:13px;font-weight:500;">API integration experience</span>
+        <span style="background:var(--navy);color:var(--white);padding:8px 16px;font-size:13px;font-weight:500;">Automation platforms (Zapier, Make)</span>
+        <span style="background:var(--navy);color:var(--white);padding:8px 16px;font-size:13px;font-weight:500;">Quick learner, execution-focused</span>
+        <span style="background:var(--gold);color:var(--navy);padding:8px 16px;font-size:13px;font-weight:600;">Ready to build on Day 1</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">12</span>
+  </div>
+</div>
+
+<!-- ======== PAGE 13: CLOSING ======== -->
+<div class="page closing-page">
+  <div class="page-inner">
+    <span class="section-eyebrow">Let's Talk</span>
+    <p class="closing-quote">"I want to work for you —<br>in whatever role makes<br><em>the most sense.</em>"</p>
+    <div class="gold-rule" style="background:var(--gold);margin-bottom:32px;"></div>
+    <div class="closing-message">
+      <p>Hutch — everything in this document is something I can build, set up, and manage for you. But I want to be clear about something: <strong>the AI Engineer role is just one way I can bring value.</strong> If there's a different place on your team where I fit better right now, I'm open to that conversation.</p>
+      <p>What I know is that I want to work for you. I've watched how you operate, I believe in what Impact is building, and I'm genuinely excited about what's possible here — both for the company and for me professionally. <strong>I'm not looking for a title. I'm looking for the chance to contribute and grow alongside you.</strong></p>
+      <p>These AI systems are things I'm already capable of building. As your AI engineer, this is where I'd start — and I'd keep going from there as the tools improve and the business grows.</p>
+    </div>
+    <div class="next-steps" style="grid-template-columns:1fr;">
+      <div class="ns-card" style="text-align:center;padding:36px 48px;">
+        <span class="ns-num" style="font-size:56px;">→</span>
+        <h5 style="font-size:18px;margin-bottom:12px;">Let's Meet</h5>
+        <p style="max-width:440px;margin:0 auto;">I'll be in touch. Looking forward to the conversation — and to showing you what this looks like in action.</p>
+      </div>
+    </div>
+    <div class="final-line">
+      <p>Prepared with genuine respect for what you've built — and real excitement about <strong>what's possible from here.</strong></p>
+    </div>
+  </div>
+  <div class="page-footer dark-footer">
+    <span class="pf-brand">Impact Commercial Services · AI Integration</span>
+    <span class="pf-num">13</span>
+  </div>
+</div>
+
+</body>
+</html>
